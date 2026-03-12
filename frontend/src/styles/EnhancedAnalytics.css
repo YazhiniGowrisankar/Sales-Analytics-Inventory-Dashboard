@@ -1,0 +1,387 @@
+/* Enhanced Analytics Dashboard Styles */
+
+:root {
+  --primary-blue: #1F3A5F;
+  --teal: #2CA6A4;
+  --light-teal: #6FD0CF;
+  --soft-blue: #7FA6C4;
+  --background-neutral: #F4F6F8;
+  --white: #FFFFFF;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+.enhanced-analytics-container {
+  background-color: var(--background-neutral);
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Summary Cards */
+.summary-card {
+  border: 1px solid var(--light-teal);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card .card-body {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.summary-icon {
+  font-size: 2.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.summary-title {
+  color: #6c757d;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-value {
+  color: var(--primary-blue);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Chart Cards */
+.chart-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.chart-card .card-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  padding: 0.75rem 1.25rem;
+}
+
+.chart-card .card-header h5 {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chart-card .card-body {
+  padding: 1rem;
+  background: white;
+}
+
+/* Date Filter Controls */
+.date-filter-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.date-filter-select {
+  width: 150px;
+  border-color: var(--light-teal);
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.date-filter-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.2rem rgba(44, 166, 164, 0.25);
+}
+
+.custom-date-btn {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.custom-date-btn:hover {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.custom-date-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.custom-date-btn:disabled:hover {
+  background-color: transparent;
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.refresh-btn {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.refresh-btn:hover {
+  background-color: #172e4a;
+  border-color: #172e4a;
+  color: var(--white);
+}
+
+/* Custom Date Picker */
+.custom-date-picker {
+  border: 1px solid var(--light-teal);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.custom-date-picker .card-header {
+  background: linear-gradient(135deg, var(--soft-blue) 0%, var(--light-teal) 100%);
+  border-bottom: 1px solid var(--light-teal);
+  padding: 1rem 1.5rem;
+}
+
+.custom-date-picker .card-header h5 {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin: 0;
+}
+
+.custom-date-input {
+  border-color: var(--light-teal);
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+.custom-date-input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.2rem rgba(44, 166, 164, 0.25);
+}
+
+.selected-dates-container {
+  margin-top: 1rem;
+}
+
+.selected-dates-container h6 {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.selected-date-badge {
+  background-color: var(--background-neutral);
+  color: var(--primary-blue);
+  border: 1px solid var(--light-teal);
+  border-radius: 20px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem;
+}
+
+.selected-date-badge .btn-close {
+  font-size: 0.6rem;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.selected-date-badge .btn-close:hover {
+  opacity: 1;
+}
+
+/* Chart Styles */
+.recharts-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.recharts-cartesian-axis-tick {
+  fill: var(--primary-blue);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.recharts-tooltip-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.recharts-tooltip-content {
+  background-color: var(--white);
+  border: 1px solid var(--light-teal);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.recharts-legend-wrapper {
+  padding-top: 1rem;
+}
+
+.recharts-legend-item {
+  font-weight: 500;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background-color: var(--background-neutral);
+}
+
+.loading-spinner {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  color: var(--primary-blue);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Alert Styles */
+.analytics-alert {
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.analytics-alert.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .enhanced-analytics-container {
+    padding: 1rem;
+  }
+  
+  .date-filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .date-filter-select {
+    width: 100%;
+  }
+  
+  .summary-card .card-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .summary-value {
+    font-size: 1.5rem;
+  }
+  
+  .chart-card .card-body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .summary-card .card-body {
+    padding: 1rem 0.75rem;
+  }
+  
+  .summary-icon {
+    font-size: 2rem;
+  }
+  
+  .summary-value {
+    font-size: 1.25rem;
+  }
+  
+  .chart-card .card-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .chart-card .card-header h5 {
+    font-size: 1rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chart Specific Styles */
+.line-chart-line {
+  stroke: var(--teal);
+  stroke-width: 3;
+}
+
+.line-chart-dot {
+  fill: var(--primary-blue);
+  stroke: var(--primary-blue);
+  stroke-width: 2;
+}
+
+.bar-chart-bar {
+  fill: var(--teal);
+  rx: 4;
+  ry: 4;
+}
+
+.column-chart-bar {
+  fill: var(--soft-blue);
+  rx: 4;
+  ry: 4;
+}
+
+.scatter-chart-dot {
+  fill: var(--teal);
+}

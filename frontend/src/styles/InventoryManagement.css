@@ -1,0 +1,119 @@
+/* Inventory Management Styles */
+.inventory-management {
+  padding: 20px;
+}
+
+.inventory-management .table {
+  margin-bottom: 0;
+}
+
+.inventory-management .table th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  padding: 12px 8px;
+}
+
+.inventory-management .table td {
+  padding: 12px 8px;
+  vertical-align: middle;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.inventory-management .table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.stock-good {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.stock-low {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.stock-out {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.inventory-management .pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inventory-management .pagination button {
+  min-width: 100px;
+}
+
+.inventory-management .badge {
+  font-size: 0.75em;
+  padding: 0.375em 0.75em;
+}
+
+.inventory-management .card {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.inventory-management .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+}
+
+.inventory-management .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.inventory-management .modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.inventory-management .form-control:focus,
+.inventory-management .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.inventory-management .table-responsive {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.inventory-management .text-muted {
+  font-size: 0.875em;
+}
+
+.inventory-management .fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .inventory-management {
+    padding: 10px;
+  }
+  
+  .inventory-management .table th,
+  .inventory-management .table td {
+    padding: 8px 4px;
+    font-size: 0.875rem;
+  }
+  
+  .inventory-management .btn-sm {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+  }
+}
