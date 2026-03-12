@@ -110,4 +110,4 @@ psql -d sri_kannan_traders -f database/seed_data.sql
 
 ## License
 
-© 2024 SRI KANNAN TRADERS. All rights reserved.
+© 2026 SRI KANNAN TRADERS. All rights reserved.
