@@ -119,8 +119,8 @@ const OrderManagement = () => {
         end_date: new Date().toISOString().split('T')[0]     // Today
       });
       
-      // Create download link
-      const url = window.URL.createObjectURL(new Blob([response.data]));
+      // Create download link from blob response
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: 'text/csv' }));
       const link = document.createElement('a');
       link.href = url;
       link.setAttribute('download', `order_${orderId}_completed.csv`);
@@ -130,8 +130,14 @@ const OrderManagement = () => {
       window.URL.revokeObjectURL(url);
       
     } catch (error) {
-      setError('Failed to export order');
-      console.error('Export error:', error);
+      let errorMessage = 'Failed to export order';
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
+      setError(errorMessage);
     }
   };
 
@@ -148,8 +154,8 @@ const OrderManagement = () => {
       
       const response = await orderAPI.exportCompletedOrders(params);
       
-      // Create download link
-      const url = window.URL.createObjectURL(new Blob([response.data]));
+      // Create download link from blob response
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: 'text/csv' }));
       const link = document.createElement('a');
       link.href = url;
       link.setAttribute('download', `completed_orders_${new Date().toISOString().split('T')[0]}.csv`);
@@ -159,8 +165,14 @@ const OrderManagement = () => {
       window.URL.revokeObjectURL(url);
       
     } catch (error) {
-      setError('Failed to export completed orders');
-      console.error('Export error:', error);
+      let errorMessage = 'Failed to export completed orders';
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
+      setError(errorMessage);
     }
   };
 

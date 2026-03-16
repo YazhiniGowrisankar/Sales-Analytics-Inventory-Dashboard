@@ -1,0 +1,54 @@
+.diagnostic-analytics .column-options {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+.diagnostic-analytics .column-options .form-check {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.diagnostic-analytics .column-options .form-check label {
+  margin-bottom: 0;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 1;
+}
+
+.diagnostic-analytics .position-fixed {
+  backdrop-filter: blur(4px);
+}
+
+.diagnostic-analytics .text-capitalize {
+  text-transform: capitalize;
+}
+
+.diagnostic-analytics .date-filter-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.diagnostic-analytics .date-filter-select {
+  min-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .diagnostic-analytics .date-filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .diagnostic-analytics .date-filter-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

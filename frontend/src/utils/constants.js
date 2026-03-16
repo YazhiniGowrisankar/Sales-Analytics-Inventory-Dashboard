@@ -182,6 +182,7 @@ export const ROUTES = {
   ADMIN_PRODUCTS: '/admin/products',
   ADMIN_ORDERS: '/admin/orders',
   ADMIN_ANALYTICS: '/admin/analytics',
+  ADMIN_DIAGNOSTIC_ANALYTICS: '/admin/diagnostic-analytics',
   ADMIN_INVENTORY: '/admin/inventory',
   ADMIN_UPLOAD: '/admin/upload-dataset',
 };
@@ -197,6 +198,7 @@ export const NAVIGATION_ITEMS = {
     { path: ROUTES.ADMIN_PRODUCTS, label: 'Products', icon: 'bi-box' },
     { path: ROUTES.ADMIN_ORDERS, label: 'Orders', icon: 'bi-receipt' },
     { path: ROUTES.ADMIN_ANALYTICS, label: 'Analytics', icon: 'bi-graph-up' },
+    { path: ROUTES.ADMIN_DIAGNOSTIC_ANALYTICS, label: 'Diagnostic Analytics', icon: 'bi-search' },
     { path: ROUTES.ADMIN_INVENTORY, label: 'Inventory Management', icon: 'bi-box-seam' },
     ...(APP_CONFIG.enableDatasetUpload ? [
       { path: ROUTES.ADMIN_UPLOAD, label: 'Upload Dataset', icon: 'bi-upload' }

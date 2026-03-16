@@ -451,6 +451,7 @@ const exportCompletedOrders = async (req, res) => {
       SELECT 
         o.order_id,
         o.order_date,
+        o.completed_at,
         o.total_amount,
         c.name as customer_name,
         c.shop_name,
@@ -467,7 +468,7 @@ const exportCompletedOrders = async (req, res) => {
       JOIN order_items oi ON o.order_id = oi.order_id
       JOIN products p ON oi.product_id = p.product_id
       ${whereClause}
-      ORDER BY o.order_date DESC, o.order_id ASC, oi.product_id ASC
+      ORDER BY o.completed_at DESC, o.order_id ASC, oi.product_id ASC
     `, params);
     
     if (result.rows.length === 0) {
@@ -481,6 +482,7 @@ const exportCompletedOrders = async (req, res) => {
     const csvData = result.rows.map(row => ({
       'Order ID': row.order_id,
       'Order Date': new Date(row.order_date).toLocaleDateString('en-IN'),
+      'Completion Date': row.completed_at ? new Date(row.completed_at).toLocaleDateString('en-IN') : 'N/A',
       'Customer Name': row.customer_name,
       'Shop Name': row.shop_name,
       'Email': row.email,
@@ -489,9 +491,9 @@ const exportCompletedOrders = async (req, res) => {
       'Product Name': row.product_name,
       'Category': row.category,
       'Quantity': row.quantity,
-      'Unit Price': row.unit_price.toFixed(2),
-      'Total Price': row.total_price.toFixed(2),
-      'Order Total': row.total_amount.toFixed(2)
+      'Unit Price': parseFloat(row.unit_price).toFixed(2),
+      'Total Price': parseFloat(row.total_price).toFixed(2),
+      'Order Total': parseFloat(row.total_amount).toFixed(2)
     }));
     
     // Generate CSV

@@ -111,4 +111,19 @@ export const uploadAPI = {
   deleteUploadedDataset: (id) => api.delete(`/upload/dataset/${id}`),
 };
 
+// Diagnostic Analytics API endpoints
+export const diagnosticAPI = {
+  getFastMovingProducts: (params) => api.get('/diagnostics/top-products', { params }),
+  getSlowMovingProducts: (params) => api.get('/diagnostics/slow-products', { params }),
+  getCategoryPerformance: (params) => api.get('/diagnostics/category-performance', { params }),
+  getTopCustomers: (params) => api.get('/diagnostics/top-customers', { params }),
+  getProductRevenueContribution: (params) => api.get('/diagnostics/product-contribution', { params }),
+  getSalesTrendsAnalysis: (params) => api.get('/diagnostics/sales-trends', { params }),
+  getStockAnalysis: (params) => api.get('/diagnostics/stock-analysis', { params }),
+  getCustomerOrderPatterns: (params) => api.get('/diagnostics/customer-patterns', { params }),
+  getProfitMarginAnalysis: (params) => api.get('/diagnostics/profit-margins', { params }),
+  getDiagnosticSummary: (params) => api.get('/diagnostics/summary', { params }),
+  getAvailableDatasets: () => api.get('/diagnostics/datasets'),
+};
+
 export default api;

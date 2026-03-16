@@ -12,6 +12,7 @@ const orderRoutes = require('./routes/orders');
 const analyticsRoutes = require('./routes/analytics');
 const uploadRoutes = require('./routes/upload');
 const salesAnalyticsRoutes = require('./routes/salesAnalytics');
+const diagnosticRoutes = require('./routes/diagnostics');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -59,6 +60,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/sales', salesAnalyticsRoutes);
+app.use('/api/diagnostics', diagnosticRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

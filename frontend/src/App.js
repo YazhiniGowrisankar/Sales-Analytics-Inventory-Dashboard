@@ -21,6 +21,7 @@ import ProductManagement from './pages/admin/Products';
 import OrderManagement from './pages/admin/Orders';
 import InventoryManagement from './pages/admin/InventoryManagement';
 import EnhancedAnalytics from './pages/admin/EnhancedAnalytics';
+import DiagnosticAnalytics from './pages/admin/DiagnosticAnalytics';
 import UploadDataset from './pages/admin/UploadDataset';
 
 // Protected Route Component
@@ -162,6 +163,16 @@ function App() {
             <ProtectedRoute requiredRole="admin">
               <Layout showSidebar={true}>
                 <EnhancedAnalytics />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/diagnostic-analytics"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <Layout showSidebar={true}>
+                <DiagnosticAnalytics />
               </Layout>
             </ProtectedRoute>
           }
